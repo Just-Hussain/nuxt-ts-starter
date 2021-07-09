@@ -1,8 +1,8 @@
 import { Context } from '@nuxt/types'
-import { VuetifyPreset } from 'vuetify/types/services/presets'
+import { Framework } from 'vuetify/types'
 import colors from 'vuetify/es5/util/colors'
 
-export default (ctx: Context): VuetifyPreset => {
+export default (ctx: Context): Framework => {
 	return {
 		theme: {
 			dark: true,
@@ -18,5 +18,5 @@ export default (ctx: Context): VuetifyPreset => {
 				},
 			},
 		},
-	} as VuetifyPreset
+	} as Framework
 }
