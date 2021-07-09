@@ -1,3 +1,4 @@
+import axiosConfig from './utils/configs/axios.config'
 import i18nConfig from './utils/configs/i18n.config'
 
 export default {
@@ -22,7 +23,10 @@ export default {
 
 	// Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
 	// !!! Always use object syntax for adding in plugins !!!
-	plugins: [{ src: '~/utils/plugins/i18n.plugin.ts' }],
+	plugins: [
+		{ src: '~/utils/plugins/i18n.plugin.ts' },
+		{ src: '~/utils/plugins/axios.plugin.ts' },
+	],
 
 	// Auto import components: https://go.nuxtjs.dev/config-components
 	components: true,
@@ -44,7 +48,7 @@ export default {
 	],
 
 	// Axios module configuration: https://go.nuxtjs.dev/config-axios
-	axios: {},
+	axios: axiosConfig,
 
 	// https://i18n.nuxtjs.org/options-reference
 	i18n: i18nConfig,
