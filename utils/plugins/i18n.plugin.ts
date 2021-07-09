@@ -7,7 +7,6 @@ const i18n: Plugin = (ctx) => {
 	 * @param oldLocale
 	 * @param newLocale
 	 */
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	app.i18n.onBeforeLanguageSwitch = (oldLocale, newLocale) => {
 		/**
 		 * It is possible to access vuetify's plugin here because it is loaded before i18n's plugin.
