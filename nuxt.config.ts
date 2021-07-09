@@ -1,3 +1,5 @@
+import i18nConfig from './utils/configs/i18n.config'
+
 export default {
 	// Global page headers: https://go.nuxtjs.dev/config-head
 	head: {
@@ -19,7 +21,8 @@ export default {
 	css: [],
 
 	// Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-	plugins: [],
+	// !!! Always use object syntax for adding in plugins !!!
+	plugins: [{ src: '~/utils/plugins/i18n.plugin.ts' }],
 
 	// Auto import components: https://go.nuxtjs.dev/config-components
 	components: true,
@@ -36,10 +39,15 @@ export default {
 	modules: [
 		// https://go.nuxtjs.dev/axios
 		'@nuxtjs/axios',
+		// https://i18n.nuxtjs.org/
+		'nuxt-i18n',
 	],
 
 	// Axios module configuration: https://go.nuxtjs.dev/config-axios
 	axios: {},
+
+	// https://i18n.nuxtjs.org/options-reference
+	i18n: i18nConfig,
 
 	// Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
 	vuetify: {
