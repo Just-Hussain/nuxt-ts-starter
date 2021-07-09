@@ -4,6 +4,10 @@ import colors from 'vuetify/es5/util/colors'
 
 export default (ctx: Context): Framework => {
 	return {
+		/**
+		 * Using the route to specify RTL because i18n is not yet configured at this point of nuxt's lifecycle
+		 */
+		rtl: ctx.route.path.includes('/ar'),
 		theme: {
 			dark: true,
 			themes: {
