@@ -28,6 +28,7 @@
       "@nuxtjs/axios",
       "@types/node",
       "@nuxtjs/vuetify",
+      "nuxt-i18n",
     ]
   },
   "exclude": [
