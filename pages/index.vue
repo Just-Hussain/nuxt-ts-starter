@@ -7,8 +7,11 @@
 			</v-card>
 			<v-card>
 				<v-card-title class="headline">
-					Welcome to the Vuetify + Nuxt.js template
+					Welcome to the Vuetify + Nuxt.js + Typescript template
 				</v-card-title>
+				<v-card-subtitle>
+					{{ $t('testMsg') }}
+				</v-card-subtitle>
 				<v-card-text>
 					<p>
 						Vuetify is a progressive Material Design component framework for
@@ -25,35 +28,7 @@
 							documentation </a
 						>.
 					</p>
-					<p>
-						If you have questions, please join the official
-						<a
-							href="https://chat.vuetifyjs.com/"
-							target="_blank"
-							rel="noopener noreferrer"
-							title="chat"
-						>
-							discord </a
-						>.
-					</p>
-					<p>
-						Find a bug? Report it on the github
-						<a
-							href="https://github.com/vuetifyjs/vuetify/issues"
-							target="_blank"
-							rel="noopener noreferrer"
-							title="contribute"
-						>
-							issue board </a
-						>.
-					</p>
-					<p>
-						Thank you for developing with Vuetify and I look forward to bringing
-						more exciting features in the future.
-					</p>
-					<div class="text-xs-right">
-						<em><small>&mdash; John Leider</small></em>
-					</div>
+
 					<hr class="my-3" />
 					<a
 						href="https://nuxtjs.org/"
@@ -64,14 +39,40 @@
 					</a>
 					<br />
 					<a
-						href="https://github.com/nuxt/nuxt.js"
+						href="https://github.com/nuxt-community/nuxt-property-decorator"
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						Nuxt GitHub
+						Nuxt Property Decorator
 					</a>
+					<br />
+					<a
+						href="https://typescript.nuxtjs.org/"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						Nuxt/ TypeScript
+					</a>
+					<br />
+					<a
+						href="https://axios.nuxtjs.org/"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						Nuxt/ Axios
+					</a>
+					<br />
+					<a
+						href="https://i18n.nuxtjs.org/"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						Nuxt/ I18n
+					</a>
+					<br />
 				</v-card-text>
 				<v-card-actions>
+					<v-btn color="accent" @click="btnHandler"> Change Language </v-btn>
 					<v-spacer />
 					<v-btn color="primary" nuxt to="/inspire"> Continue </v-btn>
 				</v-card-actions>
@@ -79,3 +80,20 @@
 		</v-col>
 	</v-row>
 </template>
+
+<script lang="ts">
+import { Component, Vue } from 'nuxt-property-decorator'
+import { exampleStore } from '~/store'
+
+@Component({ name: 'index' })
+export default class extends Vue {
+	btnHandler() {
+		this.$i18n.setLocale(['ar', 'en'][Math.floor(Math.random() * 2)])
+
+		console.log(exampleStore.stateExample)
+		exampleStore.updateStateExmaple('Text Changed By Mutation')
+		console.log(exampleStore.stateExample)
+		exampleStore.actionExample()
+	}
+}
+</script>
