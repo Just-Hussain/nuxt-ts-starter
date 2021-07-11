@@ -253,3 +253,4 @@ describe('Example Store.', () => {
 - [Nuxt](https://nuxtjs.org/)
 - [Nuxt Propery Decorator](https://github.com/nuxt-community/nuxt-property-decorator)
 - [Vuetify](https://vuetifyjs.com/en/)
+- [Axios Mock Adapter](https://github.com/ctimmerm/axios-mock-adapter)
