@@ -74,6 +74,8 @@
 				<v-card-actions>
 					<v-btn color="accent" @click="btnHandler"> Change Language </v-btn>
 					<v-spacer />
+					<v-btn color="secondary" nuxt to="/login"> Login </v-btn>
+					<v-spacer />
 					<v-btn color="primary" nuxt to="/inspire"> Continue </v-btn>
 				</v-card-actions>
 			</v-card>
