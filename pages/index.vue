@@ -72,7 +72,8 @@
 					<br />
 				</v-card-text>
 				<v-card-actions>
-					<v-btn color="accent" @click="btnHandler"> Change Language </v-btn>
+					<v-btn color="accent" @click="setLang('ar')"> AR </v-btn>
+					<v-btn color="accent" @click="setLang('en')"> EN </v-btn>
 					<v-spacer />
 					<v-btn color="primary" nuxt to="/inspire"> Continue </v-btn>
 				</v-card-actions>
@@ -87,9 +88,11 @@ import { exampleStore } from '~/store'
 
 @Component({ name: 'index' })
 export default class extends Vue {
-	btnHandler() {
-		this.$i18n.setLocale(['ar', 'en'][Math.floor(Math.random() * 2)])
+	setLang(lang: 'ar' | 'en') {
+		this.$i18n.setLocale(lang)
+	}
 
+	btnHandler() {
 		console.log(exampleStore.stateExample)
 		exampleStore.updateStateExmaple('Text Changed By Mutation')
 		console.log(exampleStore.stateExample)
