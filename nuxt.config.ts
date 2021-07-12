@@ -1,3 +1,4 @@
+import authConfig from './utils/configs/auth.config'
 import axiosConfig from './utils/configs/axios.config'
 import i18nConfig from './utils/configs/i18n.config'
 
@@ -45,6 +46,8 @@ export default {
 		'@nuxtjs/axios',
 		// https://i18n.nuxtjs.org/
 		'nuxt-i18n',
+		// https://auth.nuxtjs.org/
+		'@nuxtjs/auth-next',
 	],
 
 	// Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -52,6 +55,9 @@ export default {
 
 	// https://i18n.nuxtjs.org/options-reference
 	i18n: i18nConfig,
+
+	// https://auth.nuxtjs.org/api/options
+	auth: authConfig,
 
 	// Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
 	vuetify: {
