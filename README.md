@@ -141,7 +141,7 @@ import { exampleStore } from '~/store'
 
 The usage of `vuex-module-decorators` causes conflicts with two other plugins in the project that uses Vuex. The Vuex feature in both `nuxt/auth` and `nuxt/i18n` should be disabled.
 
-In `i18.config.ts` and `auth.config.ts`:
+In `i18n.config.ts` and `auth.config.ts`:
 
 ```ts
 export default {
@@ -265,11 +265,18 @@ describe('Example Store.', () => {
 Authorization in the project is achived by using `@nuxt/auth` and Keycloak. Everything related to authrization is handled by nuxt's auth module.
 
 It can be configured in `auth.config.ts`. It uses env vars that are indicated in `.example.env`.
+Note that Vuex in the plugin's options should be disabled.
 
 #### Note
 
 The projcet is currently using `@nuxt/auth-next` which is still under heavy development but stable to an extent.
 The used versoin is fixed to avoid breadkin changes, and with the current simple usage it works fine.
+
+### I18n
+
+I18n's usage is simple, its configuration is in `i18n.cinfig.ts` and it has a plugin in `i18n.plugin.ts`.
+To keep consistent locale between routes, **localePath()** should be used.
+Note that Vuex in the plugin's options should be disabled.
 
 ---
 
