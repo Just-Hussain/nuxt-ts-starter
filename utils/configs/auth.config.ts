@@ -1,3 +1,4 @@
+// https://auth.nuxtjs.org/api/options
 export default {
 	strategies: {
 		local: false,
