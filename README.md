@@ -4,8 +4,10 @@ A configured Nuxt.js template that is ready for development.
 The configuration includes:
 
 - TypeScript.
+- Docker.
 - Vuetify.
 - Axios.
+- Auth.
 - I18n.
 - Jest.
 - Vuex.
