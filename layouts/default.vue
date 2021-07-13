@@ -70,18 +70,20 @@ export default class extends Vue {
 	clipped = false
 	drawer = false
 	fixed = false
-	items = [
-		{
-			icon: 'mdi-apps',
-			title: 'Welcome',
-			to: '/',
-		},
-		{
-			icon: 'mdi-chart-bubble',
-			title: 'Inspire',
-			to: '/inspire',
-		},
-	]
+	get items() {
+		return [
+			{
+				icon: 'mdi-apps',
+				title: 'Welcome',
+				to: this.localePath('/'),
+			},
+			{
+				icon: 'mdi-chart-bubble',
+				title: 'Inspire',
+				to: this.localePath('/inspire'),
+			},
+		]
+	}
 	miniVariant = false
 	right = true
 	rightDrawer = false
