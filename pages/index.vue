@@ -7,7 +7,7 @@
 			</v-card>
 			<v-card>
 				<v-card-title class="headline">
-					Welcome to the Vuetify + Nuxt.js + Typescript template
+					Welcome {{ name }} to the Vuetify + Nuxt.js + Typescript template
 				</v-card-title>
 				<v-card-subtitle>
 					{{ $t('testMsg') }}
@@ -76,6 +76,7 @@
 					<v-btn color="accent" @click="setLang('en')"> EN </v-btn>
 					<v-spacer />
 					<v-btn color="secondary" nuxt to="/login"> Login </v-btn>
+					<v-btn @click="logout" color="secondary"> Logout </v-btn>
 					<v-spacer />
 					<v-btn color="primary" nuxt to="/inspire"> Continue </v-btn>
 				</v-card-actions>
@@ -94,11 +95,19 @@ export default class extends Vue {
 		this.$i18n.setLocale(lang)
 	}
 
+	get name() {
+		return (this.$auth.user?.preferred_username as string)?.toUpperCase()
+	}
+
 	btnHandler() {
 		console.log(exampleStore.stateExample)
 		exampleStore.updateStateExmaple('Text Changed By Mutation')
 		console.log(exampleStore.stateExample)
 		exampleStore.actionExample()
+	}
+
+	async logout() {
+		const res = await this.$auth.logout()
 	}
 }
 </script>
