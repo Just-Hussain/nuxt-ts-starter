@@ -7,7 +7,7 @@
 			</v-card>
 			<v-card>
 				<v-card-title class="headline">
-					Welcome to the Vuetify + Nuxt.js + Typescript template
+					Welcome {{ name }} to the Vuetify + Nuxt.js + Typescript template
 				</v-card-title>
 				<v-card-subtitle>
 					{{ $t('testMsg') }}
@@ -72,7 +72,11 @@
 					<br />
 				</v-card-text>
 				<v-card-actions>
-					<v-btn color="accent" @click="btnHandler"> Change Language </v-btn>
+					<v-btn color="accent" @click="setLang('ar')"> AR </v-btn>
+					<v-btn color="accent" @click="setLang('en')"> EN </v-btn>
+					<v-spacer />
+					<v-btn color="secondary" nuxt to="/login"> Login </v-btn>
+					<v-btn @click="logout" color="secondary"> Logout </v-btn>
 					<v-spacer />
 					<v-btn color="primary" nuxt to="/inspire"> Continue </v-btn>
 				</v-card-actions>
@@ -87,13 +91,23 @@ import { exampleStore } from '~/store'
 
 @Component({ name: 'index' })
 export default class extends Vue {
-	btnHandler() {
-		this.$i18n.setLocale(['ar', 'en'][Math.floor(Math.random() * 2)])
+	setLang(lang: 'ar' | 'en') {
+		this.$i18n.setLocale(lang)
+	}
 
+	get name() {
+		return (this.$auth.user?.preferred_username as string)?.toUpperCase()
+	}
+
+	btnHandler() {
 		console.log(exampleStore.stateExample)
 		exampleStore.updateStateExmaple('Text Changed By Mutation')
 		console.log(exampleStore.stateExample)
 		exampleStore.actionExample()
+	}
+
+	async logout() {
+		const res = await this.$auth.logout()
 	}
 }
 </script>
