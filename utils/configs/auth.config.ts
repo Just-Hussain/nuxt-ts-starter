@@ -29,6 +29,9 @@ export default {
 		},
 	},
 
+	// Conflicts with vuex-module-decorators, hence disabled.
+	vuex: false,
+
 	redirect: {
 		login: '/login',
 		logout: '/',
