@@ -34,7 +34,25 @@ export default {
 	plugins: [
 		{ src: '~/utils/plugins/i18n.plugin.ts' },
 		{ src: '~/utils/plugins/axios.plugin.ts' },
+		{ src: '~/utils/plugins/auth.plugin.ts' },
 	],
+
+	extendPlugins(plugins: { src: string }[]) {
+		/**
+		 * The auth module's plugin is loaded as the last plugin,
+		 * even after the custom plugin.
+		 * Hence, Load the custom auth plugin at the end so that $auth can be accessable.
+		 */
+		const pluginIndex = plugins.findIndex(
+			({ src }) => src === '~/utils/plugins/auth.plugin.ts'
+		)
+		const shouldBeLastPlugin = plugins[pluginIndex]
+
+		plugins.splice(pluginIndex, 1)
+		plugins.push(shouldBeLastPlugin)
+
+		return plugins
+	},
 
 	// Auto import components: https://go.nuxtjs.dev/config-components
 	components: true,
