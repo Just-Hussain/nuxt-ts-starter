@@ -135,6 +135,18 @@ Now, all modules can be accessed directly from the store, anywhere:
 import { exampleStore } from '~/store'
 ```
 
+#### Caveats
+
+The usage of `vuex-module-decorators` causes conflicts with two other plugins in the project that uses Vuex. The Vuex feature in both `nuxt/auth` and `nuxt/i18n` should be disabled.
+
+In `i18.config.ts` and `auth.config.ts`:
+
+```ts
+export default {
+	vuex: false,
+}
+```
+
 ### Configurations
 
 All plugin's configurations files are founde under `/utils/configs`, in there the plugins can be configured as wished and already include basic configuration.
@@ -245,6 +257,17 @@ describe('Example Store.', () => {
 	})
 })
 ```
+
+### Auth
+
+Authorization in the project is achived by using `@nuxt/auth` and Keycloak. Everything related to authrization is handled by nuxt's auth module.
+
+It can be configured in `auth.config.ts`. It uses env vars that are indicated in `.example.env`.
+
+#### Note
+
+The projcet is currently using `@nuxt/auth-next` which is still under heavy development but stable to an extent.
+The used versoin is fixed to avoid breadkin changes, and with the current simple usage it works fine.
 
 ---
 
