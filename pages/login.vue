@@ -14,7 +14,7 @@
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
 
-@Component({ name: 'login', auth: 'guest' })
+@Component({ name: 'login' })
 export default class extends Vue {
 	async login() {
 		try {
