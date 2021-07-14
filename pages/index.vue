@@ -78,7 +78,9 @@
 					<v-btn color="secondary" nuxt :to="localePath('/login')">
 						Login
 					</v-btn>
-					<v-btn @click="logout" color="secondary"> Logout </v-btn>
+					<v-btn v-if="$auth.loggedIn" @click="logout" color="secondary">
+						Logout
+					</v-btn>
 					<v-spacer />
 					<v-btn color="primary" nuxt :to="localePath('/inspire')">
 						Continue
@@ -111,7 +113,9 @@ export default class extends Vue {
 	}
 
 	async logout() {
-		const res = await this.$auth.logout()
+		if (this.$auth.loggedIn) {
+			const res = await this.$auth.logout()
+		}
 	}
 }
 </script>
