@@ -40,6 +40,9 @@
 			<v-btn icon @click.stop="rightDrawer = !rightDrawer">
 				<v-icon>mdi-menu</v-icon>
 			</v-btn>
+			<v-btn v-if="$auth.loggedIn" @click="logout" color="secondary">
+				Logout
+			</v-btn>
 		</v-app-bar>
 		<v-main>
 			<v-container>
@@ -82,11 +85,27 @@ export default class extends Vue {
 				title: 'Inspire',
 				to: this.localePath('/inspire'),
 			},
+			{
+				icon: 'mdi-star',
+				title: 'Umm',
+				to: this.localePath('/umm'),
+			},
+			{
+				icon: 'mdi-arrow-right',
+				title: 'Login',
+				to: this.localePath('/login'),
+			},
 		]
 	}
 	miniVariant = false
 	right = true
 	rightDrawer = false
 	title = 'Vuetify.js'
+
+	async logout() {
+		if (this.$auth.loggedIn) {
+			const res = await this.$auth.logout()
+		}
+	}
 }
 </script>
