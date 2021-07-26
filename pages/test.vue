@@ -13,6 +13,14 @@
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
 
-@Component({ name: 'test' })
+@Component({
+	name: 'test',
+	nuxtI18n: {
+		paths: {
+			ar: encodeURI('/تجربة'),
+		},
+	},
+})
 export default class extends Vue {}
 </script>
+

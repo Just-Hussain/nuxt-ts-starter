@@ -17,6 +17,14 @@
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
 
-@Component({ name: 'inspire', middleware: ['auth'] })
+@Component({
+	name: 'inspire',
+	middleware: ['auth'],
+	nuxtI18n: {
+		paths: {
+			ar: encodeURI('/الهام'),
+		},
+	},
+})
 export default class extends Vue {}
 </script>

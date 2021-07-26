@@ -14,7 +14,14 @@
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
 
-@Component({ name: 'login' })
+@Component({
+	name: 'login',
+	nuxtI18n: {
+		paths: {
+			ar: encodeURI('/دخول'),
+		},
+	},
+})
 export default class extends Vue {
 	async login() {
 		try {
