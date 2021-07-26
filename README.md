@@ -278,6 +278,27 @@ I18n's usage is simple, its configuration is in `i18n.cinfig.ts` and it has a pl
 To keep consistent locale between routes, **localePath()** should be used.
 Note that Vuex in the plugin's options should be disabled.
 
+#### Localized Route Paths
+
+If you want to localize route paths, localize each page through its `nuxtI18n`. Encode the path using `encodeURI` for vue-router to be able to handle the Arabic characters in the url:
+
+```ts
+@Component({
+	name: 'test',
+
+	nuxtI18n: {
+		paths: {
+			ar: encodeURI('/تجربة'),
+		},
+	},
+})
+export default class extends Vue {}
+```
+
+Note that for these changes to reflect, the project must be re-built (hot-reload cannot detect it).
+
+Check out nuxt-i18n docs on the matter: [Custom Paths](https://i18n.nuxtjs.org/routing#custom-paths)
+
 ---
 
 ## Links
