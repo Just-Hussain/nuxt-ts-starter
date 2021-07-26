@@ -301,6 +301,10 @@ Check out nuxt-i18n docs on the matter: [Custom Paths](https://i18n.nuxtjs.org/r
 
 ---
 
+## Current Issues
+
+- Auth does not play well with localization, redirects after auth might often break.
+
 ## Links
 
 - [Nuxt](https://nuxtjs.org/)
