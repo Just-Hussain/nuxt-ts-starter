@@ -1,6 +1,7 @@
 import authConfig from './utils/configs/auth.config';
 import axiosConfig from './utils/configs/axios.config';
 import firebaseConfig from './utils/configs/firebase.config';
+import headConfig from './utils/configs/head.config';
 import i18nConfig from './utils/configs/i18n.config';
 import sitemapConfig from './utils/configs/sitemap.config';
 
@@ -13,24 +14,7 @@ export default {
 	},
 
 	// Global page headers: https://go.nuxtjs.dev/config-head
-	head: {
-		titleTemplate: '%s - Nuxt TS Starter',
-		title: 'Nuxt TS Starter',
-		htmlAttrs: {
-			lang: 'en',
-		},
-		meta: [
-			{ charset: 'utf-8' },
-			{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
-			{
-				hid: 'description',
-				name: 'description',
-				content: 'A configured Nuxt-Typescript template.',
-			},
-			{ name: 'format-detection', content: 'telephone=no' },
-		],
-		link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-	},
+	head: headConfig,
 
 	// Global CSS: https://go.nuxtjs.dev/config-css
 	css: [],
