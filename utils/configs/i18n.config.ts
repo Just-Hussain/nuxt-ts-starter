@@ -2,6 +2,8 @@ import { Options } from 'nuxt-i18n/types';
 
 // https://i18n.nuxtjs.org/options-reference
 export default {
+	baseUrl: process.env.HOSTNAME,
+
 	langDir: '~/utils/locales/',
 
 	defaultLocale: 'en',
@@ -25,6 +27,8 @@ export default {
 	 * All options are valid from vuei18n
 	 */
 	vueI18n: { fallbackLocale: 'en' },
+
+	lazy: true,
 
 	// it conflicts with vuex-module-decorators, hence disabled.
 	vuex: false,

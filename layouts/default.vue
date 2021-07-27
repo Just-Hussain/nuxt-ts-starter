@@ -68,7 +68,16 @@
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator';
 
-@Component({ name: 'default' })
+@Component({
+	name: 'default',
+	head() {
+		const i18nHead = this.$nuxtI18nHead({ addSeoAttributes: true });
+
+		return {
+			...i18nHead,
+		};
+	},
+})
 export default class extends Vue {
 	clipped = false;
 	drawer = false;
