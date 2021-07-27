@@ -30,7 +30,10 @@ export default {
 		{
 			hid: 'twitter:url',
 			name: 'twitter:url',
-			content: process.env.BASE_URL,
+			content:
+				process.env.NUXT_ENV_VERCEL_URL ||
+				process.env.VERCEL_URL ||
+				process.env.BASE_URL,
 		},
 		{
 			hid: 'twitter:title',
@@ -59,7 +62,10 @@ export default {
 		{
 			hid: 'og:url',
 			property: 'og:url',
-			content: process.env.BASE_URL,
+			content:
+				process.env.NUXT_ENV_VERCEL_URL ||
+				process.env.VERCEL_URL ||
+				process.env.BASE_URL,
 		},
 		{
 			hid: 'og:title',

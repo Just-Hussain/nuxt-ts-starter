@@ -2,7 +2,10 @@ import { Options } from 'nuxt-i18n/types';
 
 // https://i18n.nuxtjs.org/options-reference
 export default {
-	baseUrl: process.env.BASE_URL,
+	baseUrl:
+		process.env.NUXT_ENV_VERCEL_URL ||
+		process.env.VERCEL_URL ||
+		process.env.BASE_URL,
 
 	langDir: '~/utils/locales/',
 
