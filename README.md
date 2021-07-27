@@ -299,6 +299,27 @@ Note that for these changes to reflect, the project must be re-built (hot-reload
 
 Check out nuxt-i18n docs on the matter: [Custom Paths](https://i18n.nuxtjs.org/routing#custom-paths)
 
+### Firebase
+
+The two packages: `firebase` and `@nuxt/firebase` are included to provide firebase functionalities, the only current use is Analytics.
+
+Firebase can be configured under `utils/configs/firebase.config.ts`
+
+#### Analytics
+
+The anayltics service can be accessed using the firebase instance injected into the nuxt context: `$fire`. An example of logging an event:
+
+```ts
+setLang(lang: 'ar' | 'en') {
+	this.$i18n.setLocale(lang)
+
+	// logs an event in analytics, can be seen in the console
+	this.$fire.analytics.logEvent('select_content', {
+		content_type: 'changeing locale',
+	})
+}
+```
+
 ---
 
 ## Current Issues
