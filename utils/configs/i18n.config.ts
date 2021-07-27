@@ -2,7 +2,7 @@ import { Options } from 'nuxt-i18n/types';
 
 // https://i18n.nuxtjs.org/options-reference
 export default {
-	baseUrl: process.env.HOSTNAME,
+	baseUrl: process.env.BASE_URL,
 
 	langDir: '~/utils/locales/',
 

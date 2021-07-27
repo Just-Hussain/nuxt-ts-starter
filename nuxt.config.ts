@@ -6,13 +6,6 @@ import i18nConfig from './utils/configs/i18n.config';
 import sitemapConfig from './utils/configs/sitemap.config';
 
 export default {
-	// https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-server
-	server: {
-		port: process.env.NUXT_PORT || 3000, // default: 3000
-		host: process.env.NUXT_HOST || 'localhost', // default: localhost
-		timing: false,
-	},
-
 	// Global page headers: https://go.nuxtjs.dev/config-head
 	head: headConfig,
 
