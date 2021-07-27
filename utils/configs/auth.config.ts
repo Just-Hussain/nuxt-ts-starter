@@ -10,7 +10,13 @@ export default {
 				userInfo: `${process.env.KEYCLOAK_HOST}/auth/realms/${process.env.KEYCLOAK_REALM}/protocol/openid-connect/userinfo`,
 				logout:
 					`${process.env.KEYCLOAK_HOST}/auth/realms/${process.env.KEYCLOAK_REALM}/protocol/openid-connect/logout?redirect_uri=` +
-					encodeURIComponent(`${process.env.KEYCLOAK_REDIRECT_URI}`),
+					encodeURIComponent(
+						`${
+							process.env.NUXT_ENV_VERCEL_URL ||
+							process.env.VERCEL_URL ||
+							process.env.BASE_URL
+						}`
+					),
 			},
 			clientId: `${process.env.KEYCLOAK_CLIENT_ID}`,
 			token: {
