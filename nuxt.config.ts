@@ -1,5 +1,6 @@
 import authConfig from './utils/configs/auth.config'
 import axiosConfig from './utils/configs/axios.config'
+import firebaseConfig from './utils/configs/firebase.config'
 import i18nConfig from './utils/configs/i18n.config'
 
 export default {
@@ -73,6 +74,8 @@ export default {
 		'nuxt-i18n',
 		// https://auth.nuxtjs.org/
 		'@nuxtjs/auth-next',
+		// https://firebase.nuxtjs.org/
+		'@nuxtjs/firebase',
 	],
 
 	// Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -89,6 +92,8 @@ export default {
 		customVariables: ['~/assets/variables.scss'],
 		optionsPath: '~/utils/configs/vuetify.config.ts',
 	},
+
+	firebase: firebaseConfig,
 
 	// Build Configuration: https://go.nuxtjs.dev/config-build
 	build: {},

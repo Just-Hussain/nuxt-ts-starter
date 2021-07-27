@@ -31,6 +31,7 @@
       "nuxt-i18n",
       "jest",
       "@nuxtjs/auth-next",
+      "@nuxtjs/firebase"
     ]
   },
   "exclude": [
