@@ -1,4 +1,4 @@
-import { Options } from 'nuxt-i18n/types'
+import { Options } from 'nuxt-i18n/types';
 
 // https://i18n.nuxtjs.org/options-reference
 export default {
@@ -28,4 +28,4 @@ export default {
 
 	// it conflicts with vuex-module-decorators, hence disabled.
 	vuex: false,
-} as Options
+} as Options;

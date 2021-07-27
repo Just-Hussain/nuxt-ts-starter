@@ -11,23 +11,23 @@
 </template>
 
 <script lang="ts">
-import { NuxtError } from '@nuxt/types'
-import { Vue, Component, Prop } from 'nuxt-property-decorator'
+import { NuxtError } from '@nuxt/types';
+import { Vue, Component, Prop } from 'nuxt-property-decorator';
 
 @Component({ name: 'error', layout: 'empty' })
 export default class extends Vue {
 	@Prop({ default: null })
-	error!: NuxtError
+	error!: NuxtError;
 
-	pageNotFound = '404 Not Found'
-	otherError = 'An error occurred'
+	pageNotFound = '404 Not Found';
+	otherError = 'An error occurred';
 
 	head() {
 		const title =
-			this.error.statusCode === 404 ? this.pageNotFound : this.otherError
+			this.error.statusCode === 404 ? this.pageNotFound : this.otherError;
 		return {
 			title,
-		}
+		};
 	}
 }
 </script>

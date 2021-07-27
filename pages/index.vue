@@ -92,34 +92,34 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator'
-import { exampleStore } from '~/store'
+import { Component, Vue } from 'nuxt-property-decorator';
+import { exampleStore } from '~/store';
 
 @Component({ name: 'index' })
 export default class extends Vue {
 	setLang(lang: 'ar' | 'en') {
-		this.$i18n.setLocale(lang)
+		this.$i18n.setLocale(lang);
 
 		// logs an event in analytics, can be seen in the console
 		this.$fire.analytics.logEvent('select_content', {
 			content_type: 'changeing locale',
-		})
+		});
 	}
 
 	get name() {
-		return (this.$auth.user?.preferred_username as string)?.toUpperCase()
+		return (this.$auth.user?.preferred_username as string)?.toUpperCase();
 	}
 
 	btnHandler() {
-		console.log(exampleStore.stateExample)
-		exampleStore.updateStateExmaple('Text Changed By Mutation')
-		console.log(exampleStore.stateExample)
-		exampleStore.actionExample()
+		console.log(exampleStore.stateExample);
+		exampleStore.updateStateExmaple('Text Changed By Mutation');
+		console.log(exampleStore.stateExample);
+		exampleStore.actionExample();
 	}
 
 	async logout() {
 		if (this.$auth.loggedIn) {
-			const res = await this.$auth.logout()
+			const res = await this.$auth.logout();
 		}
 	}
 }

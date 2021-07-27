@@ -1,6 +1,6 @@
-import { Context } from '@nuxt/types'
-import { Framework } from 'vuetify/types'
-import colors from 'vuetify/es5/util/colors'
+import { Context } from '@nuxt/types';
+import { Framework } from 'vuetify/types';
+import colors from 'vuetify/es5/util/colors';
 
 export default (ctx: Context): Framework => {
 	return {
@@ -22,5 +22,5 @@ export default (ctx: Context): Framework => {
 				},
 			},
 		},
-	} as Framework
-}
+	} as Framework;
+};

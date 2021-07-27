@@ -1,4 +1,4 @@
-import { Plugin } from '@nuxt/types'
+import { Plugin } from '@nuxt/types';
 
 /**
  * Extending Axios
@@ -9,6 +9,6 @@ import { Plugin } from '@nuxt/types'
 
 const plugin: Plugin = ({ $axios }) => {
 	// customize axios here
-}
+};
 
-export default plugin
+export default plugin;

@@ -1,7 +1,7 @@
-import authConfig from './utils/configs/auth.config'
-import axiosConfig from './utils/configs/axios.config'
-import firebaseConfig from './utils/configs/firebase.config'
-import i18nConfig from './utils/configs/i18n.config'
+import authConfig from './utils/configs/auth.config';
+import axiosConfig from './utils/configs/axios.config';
+import firebaseConfig from './utils/configs/firebase.config';
+import i18nConfig from './utils/configs/i18n.config';
 
 export default {
 	// https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-server
@@ -46,13 +46,13 @@ export default {
 		 */
 		const pluginIndex = plugins.findIndex(
 			({ src }) => src === '~/utils/plugins/auth.plugin.ts'
-		)
-		const shouldBeLastPlugin = plugins[pluginIndex]
+		);
+		const shouldBeLastPlugin = plugins[pluginIndex];
 
-		plugins.splice(pluginIndex, 1)
-		plugins.push(shouldBeLastPlugin)
+		plugins.splice(pluginIndex, 1);
+		plugins.push(shouldBeLastPlugin);
 
-		return plugins
+		return plugins;
 	},
 
 	// Auto import components: https://go.nuxtjs.dev/config-components
@@ -97,4 +97,4 @@ export default {
 
 	// Build Configuration: https://go.nuxtjs.dev/config-build
 	build: {},
-}
+};

@@ -14,7 +14,7 @@ The template is using Typescript stores that are written with `vuex-module-decor
 See example:
 
 ```ts
-import { Module, VuexModule } from 'nuxt-property-decorator'
+import { Module, VuexModule } from 'nuxt-property-decorator';
 
 @Module({
 	name: 'modules/example',
@@ -28,21 +28,21 @@ All modules should be defined, initialized and exported in the store's index fil
 See example:
 
 ```ts
-import { Store } from 'vuex'
-import { getModule } from 'nuxt-property-decorator'
+import { Store } from 'vuex';
+import { getModule } from 'nuxt-property-decorator';
 
-import Example from './modules/example'
+import Example from './modules/example';
 
-export let exampleStore: Example
+export let exampleStore: Example;
 
 const initializer = (store: Store<any>) => {
-	exampleStore = getModule(Example, store)
-}
-export const plugins = [initializer]
+	exampleStore = getModule(Example, store);
+};
+export const plugins = [initializer];
 ```
 
 Now, all modules can be accessed directly from the store, anywhere:
 
 ```ts
-import { exampleStore } from '~/store'
+import { exampleStore } from '~/store';
 ```

@@ -8,14 +8,14 @@ Here are some notes on writing unit tests for the store:
 - the module name in the store shoule **exactly match** its name in the module itself.
 
 ```ts
-import Example from '~/store/modules/example'
+import Example from '~/store/modules/example';
 
-let vm = createLocalVue()
-vm.use(Vuex)
+let vm = createLocalVue();
+vm.use(Vuex);
 
 describe('Example Store.', () => {
-	let store: Store<any>
-	let exampleStore: Example
+	let store: Store<any>;
+	let exampleStore: Example;
 
 	beforeEach(() => {
 		/**
@@ -25,13 +25,13 @@ describe('Example Store.', () => {
 			modules: {
 				'modules/example': Example,
 			},
-		})
+		});
 
-		exampleStore = getModule(Example, store)
-	})
+		exampleStore = getModule(Example, store);
+	});
 
-	it('test', async () => {})
-})
+	it('test', async () => {});
+});
 ```
 
 Moreover, for testing actions that include axios calls, axios should be mocked in the following way:
@@ -43,16 +43,16 @@ Moreover, for testing actions that include axios calls, axios should be mocked i
 - Create the dummy responses for the tests.
 
 ```ts
-import MockAdapter from 'axios-mock-adapter'
-import prepareAxiosMock from './prepareAxiosMock'
-const axios = require('axios')
+import MockAdapter from 'axios-mock-adapter';
+import prepareAxiosMock from './prepareAxiosMock';
+const axios = require('axios');
 
-const mock = new MockAdapter(axios)
-prepareAxiosMock(axios)
+const mock = new MockAdapter(axios);
+prepareAxiosMock(axios);
 
 describe('Example Store.', () => {
-	let store: Store<any>
-	let exampleStore: Example
+	let store: Store<any>;
+	let exampleStore: Example;
 
 	beforeEach(() => {
 		/**
@@ -62,16 +62,16 @@ describe('Example Store.', () => {
 			modules: {
 				'modules/example': Example,
 			},
-		})
+		});
 		// setting the store's axios instance
-		store.$axios = axios
+		store.$axios = axios;
 
-		exampleStore = getModule(Example, store)
-	})
+		exampleStore = getModule(Example, store);
+	});
 
 	afterAll(() => {
-		mock.restore()
-	})
+		mock.restore();
+	});
 
 	it('Mocks axios.', async () => {
 		// Defines what to returns on a method.
@@ -81,10 +81,10 @@ describe('Example Store.', () => {
 			title:
 				'sunt aut facere repellat provident occaecati excepturi optio reprehenderit',
 			body: 'quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto',
-		})
+		});
 
-		await exampleStore.getPost()
-		expect(exampleStore.post.id).toBe(1)
-	})
-})
+		await exampleStore.getPost();
+		expect(exampleStore.post.id).toBe(1);
+	});
+});
 ```

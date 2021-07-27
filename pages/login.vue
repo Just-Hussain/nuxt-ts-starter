@@ -12,7 +12,7 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component } from 'nuxt-property-decorator'
+import { Vue, Component } from 'nuxt-property-decorator';
 
 @Component({
 	name: 'login',
@@ -25,9 +25,9 @@ import { Vue, Component } from 'nuxt-property-decorator'
 export default class extends Vue {
 	async login() {
 		try {
-			await this.$auth.loginWith('keycloak')
+			await this.$auth.loginWith('keycloak');
 		} catch (err) {
-			console.log(err)
+			console.log(err);
 		}
 	}
 }

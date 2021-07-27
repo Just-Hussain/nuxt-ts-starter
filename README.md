@@ -104,7 +104,7 @@ The template is using Typescript stores that are written with `vuex-module-decor
 See example:
 
 ```ts
-import { Module, VuexModule } from 'nuxt-property-decorator'
+import { Module, VuexModule } from 'nuxt-property-decorator';
 
 @Module({
 	name: 'modules/example',
@@ -118,23 +118,23 @@ All modules should be defined, initialized and exported in the store's index fil
 See example:
 
 ```ts
-import { Store } from 'vuex'
-import { getModule } from 'nuxt-property-decorator'
+import { Store } from 'vuex';
+import { getModule } from 'nuxt-property-decorator';
 
-import Example from './modules/example'
+import Example from './modules/example';
 
-export let exampleStore: Example
+export let exampleStore: Example;
 
 const initializer = (store: Store<any>) => {
-	exampleStore = getModule(Example, store)
-}
-export const plugins = [initializer]
+	exampleStore = getModule(Example, store);
+};
+export const plugins = [initializer];
 ```
 
 Now, all modules can be accessed directly from the store, anywhere:
 
 ```ts
-import { exampleStore } from '~/store'
+import { exampleStore } from '~/store';
 ```
 
 #### Caveats
@@ -146,7 +146,7 @@ In `i18n.config.ts` and `auth.config.ts`:
 ```ts
 export default {
 	vuex: false,
-}
+};
 ```
 
 ### Configurations
@@ -164,7 +164,7 @@ export default {
 		{ src: '~/utils/plugins/i18n.plugin.ts' },
 		{ src: '~/utils/plugins/axios.plugin.ts' },
 	],
-}
+};
 ```
 
 The object syntax should always be used to stay consistent.
@@ -179,14 +179,14 @@ Here are some notes on writing unit tests for the store:
 - the module name in the store shoule **exactly match** its name in the module itself.
 
 ```ts
-import Example from '~/store/modules/example'
+import Example from '~/store/modules/example';
 
-let vm = createLocalVue()
-vm.use(Vuex)
+let vm = createLocalVue();
+vm.use(Vuex);
 
 describe('Example Store.', () => {
-	let store: Store<any>
-	let exampleStore: Example
+	let store: Store<any>;
+	let exampleStore: Example;
 
 	beforeEach(() => {
 		/**
@@ -196,13 +196,13 @@ describe('Example Store.', () => {
 			modules: {
 				'modules/example': Example,
 			},
-		})
+		});
 
-		exampleStore = getModule(Example, store)
-	})
+		exampleStore = getModule(Example, store);
+	});
 
-	it('test', async () => {})
-})
+	it('test', async () => {});
+});
 ```
 
 Moreover, for testing actions that include axios calls, axios should be mocked in the following way:
@@ -214,16 +214,16 @@ Moreover, for testing actions that include axios calls, axios should be mocked i
 - Create the dummy responses for the tests.
 
 ```ts
-import MockAdapter from 'axios-mock-adapter'
-import prepareAxiosMock from './prepareAxiosMock'
-const axios = require('axios')
+import MockAdapter from 'axios-mock-adapter';
+import prepareAxiosMock from './prepareAxiosMock';
+const axios = require('axios');
 
-const mock = new MockAdapter(axios)
-prepareAxiosMock(axios)
+const mock = new MockAdapter(axios);
+prepareAxiosMock(axios);
 
 describe('Example Store.', () => {
-	let store: Store<any>
-	let exampleStore: Example
+	let store: Store<any>;
+	let exampleStore: Example;
 
 	beforeEach(() => {
 		/**
@@ -233,16 +233,16 @@ describe('Example Store.', () => {
 			modules: {
 				'modules/example': Example,
 			},
-		})
+		});
 		// setting the store's axios instance
-		store.$axios = axios
+		store.$axios = axios;
 
-		exampleStore = getModule(Example, store)
-	})
+		exampleStore = getModule(Example, store);
+	});
 
 	afterAll(() => {
-		mock.restore()
-	})
+		mock.restore();
+	});
 
 	it('Mocks axios.', async () => {
 		// Defines what to returns on a method.
@@ -252,12 +252,12 @@ describe('Example Store.', () => {
 			title:
 				'sunt aut facere repellat provident occaecati excepturi optio reprehenderit',
 			body: 'quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto',
-		})
+		});
 
-		await exampleStore.getPost()
-		expect(exampleStore.post.id).toBe(1)
-	})
-})
+		await exampleStore.getPost();
+		expect(exampleStore.post.id).toBe(1);
+	});
+});
 ```
 
 ### Auth

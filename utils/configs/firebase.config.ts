@@ -1,4 +1,4 @@
-import { FirebaseModuleConfiguration } from '@nuxtjs/firebase'
+import { FirebaseModuleConfiguration } from '@nuxtjs/firebase';
 
 // https://firebase.nuxtjs.org/guide/options
 
@@ -15,4 +15,4 @@ export default {
 	services: {
 		analytics: true,
 	},
-} as FirebaseModuleConfiguration
+} as FirebaseModuleConfiguration;

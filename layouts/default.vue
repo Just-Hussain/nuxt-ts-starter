@@ -66,13 +66,13 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component } from 'nuxt-property-decorator'
+import { Vue, Component } from 'nuxt-property-decorator';
 
 @Component({ name: 'default' })
 export default class extends Vue {
-	clipped = false
-	drawer = false
-	fixed = false
+	clipped = false;
+	drawer = false;
+	fixed = false;
 	get items() {
 		return [
 			{
@@ -95,16 +95,16 @@ export default class extends Vue {
 				title: 'Login',
 				to: this.localePath('/login'),
 			},
-		]
+		];
 	}
-	miniVariant = false
-	right = true
-	rightDrawer = false
-	title = 'Vuetify.js'
+	miniVariant = false;
+	right = true;
+	rightDrawer = false;
+	title = 'Vuetify.js';
 
 	async logout() {
 		if (this.$auth.loggedIn) {
-			const res = await this.$auth.logout()
+			const res = await this.$auth.logout();
 		}
 	}
 }
