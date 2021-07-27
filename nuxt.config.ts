@@ -2,6 +2,7 @@ import authConfig from './utils/configs/auth.config';
 import axiosConfig from './utils/configs/axios.config';
 import firebaseConfig from './utils/configs/firebase.config';
 import i18nConfig from './utils/configs/i18n.config';
+import sitemapConfig from './utils/configs/sitemap.config';
 
 export default {
 	// https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-server
@@ -80,6 +81,8 @@ export default {
 		'@nuxtjs/auth-next',
 		// https://firebase.nuxtjs.org/
 		'@nuxtjs/firebase',
+		// https://sitemap.nuxtjs.org/
+		'@nuxtjs/sitemap',
 	],
 
 	// Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -98,6 +101,8 @@ export default {
 	},
 
 	firebase: firebaseConfig,
+
+	sitemap: sitemapConfig,
 
 	// Build Configuration: https://go.nuxtjs.dev/config-build
 	build: {},
