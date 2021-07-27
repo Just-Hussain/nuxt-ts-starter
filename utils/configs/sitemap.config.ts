@@ -7,6 +7,6 @@ export default {
 		process.env.BASE_URL,
 
 	// Include dynamic routes here.
-	routes: ['/test'],
-	// i18n: true,
+	// routes: [],
+	i18n: true,
 };
