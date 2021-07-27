@@ -285,7 +285,7 @@ The used versoin is fixed to avoid breadkin changes, and with the current simple
 ### I18n
 
 I18n's usage is simple, its configuration is in `i18n.cinfig.ts` and it has a plugin in `i18n.plugin.ts`.
-To keep consistent locale between routes, **localePath()** should be used.
+To keep consistent locale between routes, **localeRoute()** should be used.
 Note that Vuex in the plugin's options should be disabled.
 
 #### Localized Route Paths

@@ -75,14 +75,14 @@
 					<v-btn color="accent" @click="setLang('ar')"> AR </v-btn>
 					<v-btn color="accent" @click="setLang('en')"> EN </v-btn>
 					<v-spacer />
-					<v-btn color="secondary" nuxt :to="localePath('/login')">
+					<v-btn color="secondary" nuxt :to="localeRoute('/login')">
 						Login
 					</v-btn>
 					<v-btn v-if="$auth.loggedIn" @click="logout" color="secondary">
 						Logout
 					</v-btn>
 					<v-spacer />
-					<v-btn color="primary" nuxt :to="localePath('/inspire')">
+					<v-btn color="primary" nuxt :to="localeRoute('/inspire')">
 						Continue
 					</v-btn>
 				</v-card-actions>

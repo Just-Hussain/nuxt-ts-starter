@@ -78,22 +78,22 @@ export default class extends Vue {
 			{
 				icon: 'mdi-apps',
 				title: 'Welcome',
-				to: this.localePath('/'),
+				to: this.localeRoute('/'),
 			},
 			{
 				icon: 'mdi-chart-bubble',
 				title: 'Inspire',
-				to: this.localePath('/inspire'),
+				to: this.localeRoute('/inspire'),
 			},
 			{
 				icon: 'mdi-star',
 				title: 'Test Page',
-				to: this.localePath('/test'),
+				to: this.localeRoute('/test'),
 			},
 			{
 				icon: 'mdi-arrow-right',
 				title: 'Login',
-				to: this.localePath('/login'),
+				to: this.localeRoute('/login'),
 			},
 		];
 	}
