@@ -25,6 +25,9 @@ import { Component, Vue } from 'nuxt-property-decorator';
 			ar: encodeURI('/الهام'),
 		},
 	},
+	head: {
+		title: 'Inspire',
+	},
 })
 export default class extends Vue {}
 </script>

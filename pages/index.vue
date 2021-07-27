@@ -95,7 +95,12 @@
 import { Component, Vue } from 'nuxt-property-decorator';
 import { exampleStore } from '~/store';
 
-@Component({ name: 'index' })
+@Component({
+	name: 'index',
+	head: {
+		title: 'Home',
+	},
+})
 export default class extends Vue {
 	setLang(lang: 'ar' | 'en') {
 		this.$i18n.setLocale(lang);

@@ -13,15 +13,19 @@ export default {
 
 	// Global page headers: https://go.nuxtjs.dev/config-head
 	head: {
-		titleTemplate: '%s - nuxt-ts-starter',
-		title: 'nuxt-ts-starter',
+		titleTemplate: '%s - Nuxt TS Starter',
+		title: 'Nuxt TS Starter',
 		htmlAttrs: {
 			lang: 'en',
 		},
 		meta: [
 			{ charset: 'utf-8' },
 			{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
-			{ hid: 'description', name: 'description', content: '' },
+			{
+				hid: 'description',
+				name: 'description',
+				content: 'A configured Nuxt-Typescript template.',
+			},
 			{ name: 'format-detection', content: 'telephone=no' },
 		],
 		link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],

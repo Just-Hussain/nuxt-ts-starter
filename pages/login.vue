@@ -21,6 +21,9 @@ import { Vue, Component } from 'nuxt-property-decorator';
 			ar: encodeURI('/دخول'),
 		},
 	},
+	head: {
+		title: 'Login',
+	},
 })
 export default class extends Vue {
 	async login() {

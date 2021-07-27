@@ -20,6 +20,9 @@ import { Component, Vue } from 'nuxt-property-decorator';
 			ar: encodeURI('/تجربة'),
 		},
 	},
+	head: {
+		title: 'Test',
+	},
 })
 export default class extends Vue {}
 </script>
