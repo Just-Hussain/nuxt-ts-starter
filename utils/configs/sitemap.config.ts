@@ -2,9 +2,9 @@
 
 export default {
 	hostname:
-		process.env.NUXT_ENV_VERCEL_URL ||
-		process.env.VERCEL_URL ||
-		process.env.BASE_URL,
+		// `${process.env.NUXT_ENV_VERCEL_URL}/sitemap.xml` ||
+		`https://${process.env.VERCEL_URL}/sitemap.xml` ||
+		`https://${process.env.BASE_URL}/sitemap.xml`,
 
 	// Include dynamic routes here.
 	routes: [],
