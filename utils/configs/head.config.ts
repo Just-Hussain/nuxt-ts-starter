@@ -10,6 +10,12 @@ export default {
 	},
 	link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
 	meta: [
+		// verificatopn to use Google Search Console
+		{
+			hid: 'google-site-verification',
+			name: 'google-site-verification',
+			content: 'sFt9R1_ggMI5bN_uZ5c0lQu6bm6Gzl_jfvzGd9WsssU',
+		},
 		{ charset: 'utf-8' },
 		{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
 		{
