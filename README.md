@@ -7,18 +7,23 @@
 A configured Nuxt.js template that is ready for development.
 The configuration includes:
 
-- TypeScript.
-- Docker.
-- Vuetify.
-- Axios.
-- Auth.
-- I18n.
-- Jest.
-- Vuex.
-- Nuxt Property Decorator:
-  - Vue Class Component.
-  - Vue Property Decorator.
-  - Vuex Module Decorators.
+- [TypeScript](https://typescript.nuxtjs.org/).
+- [Docker](https://www.docker.com/).
+- [Vuetify](https://vuetifyjs.com/en/).
+- [Axios](https://axios.nuxtjs.org/).
+- [Auth](https://auth.nuxtjs.org/).
+- [I18n](https://i18n.nuxtjs.org/).
+- [Vuex](https://vuex.vuejs.org/).
+- [Firebase](https://firebase.nuxtjs.org/).
+- [Jest](https://jestjs.io/):
+  - [Axios Mock Adapter](https://github.com/ctimmerm/axios-mock-adapter)
+- [Nuxt Property Decorator](https://github.com/nuxt-community/nuxt-property-decorator):
+  - [Vue Class Component](https://class-component.vuejs.org/).
+  - [Vue Property Decorator](https://github.com/kaorun343/vue-property-decorator).
+  - [Vuex Module Decorators](https://github.com/championswimmer/vuex-module-decorators).
+- SEO:
+  - [Sitemap](https://sitemap.nuxtjs.org/).
+  - [Robots](https://github.com/nuxt-community/robots-module#readme).
 
 All of the above have been configured so it is ready for development. their behaviour can be customized in their respective `/plugins` and `/configs` directories under `/utils`.
 
@@ -65,7 +70,7 @@ Layouts are a great help when you want to change the look and feel of your Nuxt 
 
 More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/layouts).
 
-### `Middleware`
+### `middleware`
 
 The middleware directory contains your application middleware. Middleware lets you define custom functions that can be run before rendering either a page or a group of pages (layout).
 
@@ -159,6 +164,8 @@ export default {
 };
 ```
 
+---
+
 ### Configurations
 
 All plugin's configurations files are founde under `/utils/configs`, in there the plugins can be configured as wished and already include basic configuration.
@@ -178,6 +185,8 @@ export default {
 ```
 
 The object syntax should always be used to stay consistent.
+
+---
 
 ### Jest
 
@@ -282,6 +291,8 @@ Note that Vuex in the plugin's options should be disabled.
 The projcet is currently using `@nuxt/auth-next` which is still under heavy development but stable to an extent.
 The used versoin is fixed to avoid breadkin changes, and with the current simple usage it works fine.
 
+---
+
 ### I18n
 
 I18n's usage is simple, its configuration is in `i18n.cinfig.ts` and it has a plugin in `i18n.plugin.ts`.
@@ -309,6 +320,8 @@ Note that for these changes to reflect, the project must be re-built (hot-reload
 
 Check out nuxt-i18n docs on the matter: [Custom Paths](https://i18n.nuxtjs.org/routing#custom-paths)
 
+---
+
 ### Firebase
 
 The two packages: `firebase` and `@nuxt/firebase` are included to provide firebase functionalities, the only current use is Analytics.
@@ -329,6 +342,8 @@ setLang(lang: 'ar' | 'en') {
 	})
 }
 ```
+
+---
 
 ### SEO
 
@@ -361,10 +376,3 @@ The base url used in the config files of the various SEO-related modules should 
 ## Current Issues
 
 - Auth does not play well with localization, redirects after auth might often break.
-
-## Links
-
-- [Nuxt](https://nuxtjs.org/)
-- [Nuxt Propery Decorator](https://github.com/nuxt-community/nuxt-property-decorator)
-- [Vuetify](https://vuetifyjs.com/en/)
-- [Axios Mock Adapter](https://github.com/ctimmerm/axios-mock-adapter)
