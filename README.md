@@ -20,7 +20,7 @@ The configuration includes:
   - Vue Property Decorator.
   - Vuex Module Decorators.
 
-All of the above have been configured so it is ready for development. Thier behaviour can be customized in thier respective `/plugins` and `/configs` directories under `/utils`.
+All of the above have been configured so it is ready for development. their behaviour can be customized in their respective `/plugins` and `/configs` directories under `/utils`.
 
 ## Build Setup
 
@@ -329,6 +329,32 @@ setLang(lang: 'ar' | 'en') {
 	})
 }
 ```
+
+### SEO
+
+The following plugins have been included to handle SEO:
+
+- @nuxtjs/sitemap
+- @nuxtjs/robots
+
+Both can be configured in their config files under `utils/configs`
+
+Also, SEO is improved by including `$nuxtI18nHead({ addSeoAttributes: true })` in the header of layouts.
+Moreover, Open Graph Protocol meta tags are included in the global head config: `head.config.ts` and can be modified their.
+
+There is also a component to handle Open Graph meta tags for specific pages: `SocialHead`. Example, anywhere in a page just include:
+
+```html
+<SocialHead
+	title="Awesome Title of the Page"
+	description="Nice info about the page."
+	image="https://meaningful-image.png"
+/>
+```
+
+#### NOTE
+
+The base url used in the config files of the various SEO-related modules should include the `https://` or `https://`.
 
 ---
 
