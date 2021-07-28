@@ -23,10 +23,13 @@ export default class extends Vue {
 	otherError = 'An error occurred';
 
 	head() {
+		const i18nHead = this.$nuxtI18nHead({ addSeoAttributes: true });
+
 		const title =
 			this.error.statusCode === 404 ? this.pageNotFound : this.otherError;
 		return {
 			title,
+			...i18nHead,
 		};
 	}
 }
