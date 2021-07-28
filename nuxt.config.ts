@@ -85,6 +85,7 @@ export default {
 	sitemap: sitemapConfig,
 
 	robots: robotsConfig,
+
 	// Build Configuration: https://go.nuxtjs.dev/config-build
 	build: {},
 };
