@@ -3,6 +3,7 @@ import axiosConfig from './utils/configs/axios.config';
 import firebaseConfig from './utils/configs/firebase.config';
 import headConfig from './utils/configs/head.config';
 import i18nConfig from './utils/configs/i18n.config';
+import robotsConfig from './utils/configs/robots.config';
 import sitemapConfig from './utils/configs/sitemap.config';
 
 export default {
@@ -60,6 +61,8 @@ export default {
 		'@nuxtjs/firebase',
 		// https://sitemap.nuxtjs.org/
 		'@nuxtjs/sitemap',
+		// https://github.com/nuxt-community/robots-module
+		'@nuxtjs/robots',
 	],
 
 	// Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -80,6 +83,8 @@ export default {
 	firebase: firebaseConfig,
 
 	sitemap: sitemapConfig,
+
+	robots: robotsConfig,
 
 	// Build Configuration: https://go.nuxtjs.dev/config-build
 	build: {},
