@@ -279,6 +279,8 @@ describe('Example Store.', () => {
 });
 ```
 
+---
+
 ### Auth
 
 Authorization in the project is achived by using `@nuxt/auth` and Keycloak. Everything related to authrization is handled by nuxt's auth module.
