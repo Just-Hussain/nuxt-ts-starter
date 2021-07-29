@@ -14,15 +14,10 @@
 import { NuxtError } from '@nuxt/types';
 import { Vue, Component, Prop } from 'nuxt-property-decorator';
 
-@Component({ name: 'error', layout: 'empty' })
-export default class extends Vue {
-	@Prop({ default: null })
-	error!: NuxtError;
-
-	pageNotFound = '404 Not Found';
-	otherError = 'An error occurred';
-
-	head() {
+@Component({
+	name: 'error',
+	layout: 'empty',
+	head(this: ErrorLayout) {
 		const i18nHead = this.$nuxtI18nHead({ addSeoAttributes: true });
 
 		const title =
@@ -31,7 +26,14 @@ export default class extends Vue {
 			title,
 			...i18nHead,
 		};
-	}
+	},
+})
+export default class ErrorLayout extends Vue {
+	@Prop({ default: null })
+	error!: NuxtError;
+
+	pageNotFound = '404 Not Found';
+	otherError = 'An error occurred';
 }
 </script>
 
