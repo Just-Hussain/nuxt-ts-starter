@@ -108,6 +108,34 @@ More information about the usage of this directory in [the documentation](https:
 
 It is a good idea to take a look at the used plugins docs for a better understanding of how it all works together, but here are some notes on how to work with this starter.
 
+### Decorators
+
+All info about decorators can be found in the above links for used plugins. But, here is a note on using them that is not found in the docs.
+
+If you want to set component's properties (such as name, layout, head ...) you can set them in the decorators itself, which keeps the class cleaner. The catch is how to accesss `this` in the decorator. Usually, the expoerted class does not need a name, but if you need `this` in the decorator you should name it and pass `this` as an instance of the class. Example:
+
+```ts
+@Component({
+	name: 'error',
+	layout: 'empty',
+	head(this: ErrorLayout) {
+		const title = this.title;
+		return {
+			title,
+		};
+	},
+})
+export default class ErrorLayout extends Vue {
+	title!: string;
+}
+```
+
+#### Note
+
+`head` can still be directly used inside the class rather than the decorator, which would eliminate the need for naming the class and passing `this` to the function. But autocompletion would not detect it.
+
+---
+
 ### Vuex Store
 
 The template is using Typescript stores that are written with `vuex-module-decorators`. All modules should be created under the `/store/modules` directory, with the following important notes:
